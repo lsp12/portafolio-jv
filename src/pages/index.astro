@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import WorkHistory from "../components/WorkHistory.astro";
+import Skills from "../components/Skills.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Education from "../components/Education.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Jonathan Vera — Senior Backend & Full Stack Developer"
+  description="Senior Full Stack Engineer with 4+ years building enterprise HR/payroll platforms, ERP integrations (SAP, Dynamics 365), REST APIs and business automation. Node.js, Vue, React, TypeScript, MongoDB."
+>
+  <Navbar />
+  <main id="main-content">
+    <Hero />
+    <About />
+    <WorkHistory />
+    <Skills />
+    <Experience />
+    <Projects />
+    <Education />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,262 @@
+---
+const jobs = [
+  {
+    num: 1,
+    titleKey: "work_history.job1_title",
+    companyKey: "work_history.job1_company",
+    periodKey: "work_history.job1_period",
+    typeKey: "work_history.job1_type",
+    descKey: "work_history.job1_desc",
+    bulletKeys: [
+      "work_history.job1_h1",
+      "work_history.job1_h2",
+      "work_history.job1_h3",
+      "work_history.job1_h4",
+    ],
+    tagsKey: "work_history.job1_tags",
+    isCurrent: true,
+  },
+  {
+    num: 2,
+    titleKey: "work_history.job2_title",
+    companyKey: "work_history.job2_company",
+    periodKey: "work_history.job2_period",
+    typeKey: "work_history.job2_type",
+    descKey: "work_history.job2_desc",
+    bulletKeys: [
+      "work_history.job2_h1",
+      "work_history.job2_h2",
+      "work_history.job2_h3",
+      "work_history.job2_h4",
+    ],
+    tagsKey: "work_history.job2_tags",
+    isCurrent: false,
+  },
+  {
+    num: 3,
+    titleKey: "work_history.job3_title",
+    companyKey: "work_history.job3_company",
+    periodKey: "work_history.job3_period",
+    typeKey: "work_history.job3_type",
+    descKey: "work_history.job3_desc",
+    bulletKeys: [
+      "work_history.job3_h1",
+      "work_history.job3_h2",
+      "work_history.job3_h3",
+      "work_history.job3_h4",
+    ],
+    tagsKey: "work_history.job3_tags",
+    isCurrent: false,
+  },
+];
+---
+
+<section id="work-history" class="wh-section" aria-label="Work history">
+  <div class="section-container">
+    <p class="section-label" data-i18n="work_history.section_label"></p>
+    <h2 class="section-title" data-i18n="work_history.section_title"></h2>
+
+    <div class="wh-timeline">
+      {jobs.map((job) => (
+        <article class="wh-item" id={`job-${job.num}`}>
+          <div class="wh-line-col" aria-hidden="true">
+            <div class={`wh-dot ${job.isCurrent ? "wh-dot-current" : ""}`}></div>
+            <div class="wh-line"></div>
+          </div>
+
+          <div class="wh-content card">
+            <div class="wh-header">
+              <div class="wh-title-group">
+                <div class="wh-meta">
+                  <span class="wh-period mono" data-i18n={job.periodKey}></span>
+                  <span class="wh-sep" aria-hidden="true">·</span>
+                  <span class="wh-type mono" data-i18n={job.typeKey}></span>
+                  {job.isCurrent && (
+                    <span class="wh-badge-current mono">current</span>
+                  )}
+                </div>
+                <h3 class="wh-job-title" data-i18n={job.titleKey}></h3>
+                <p class="wh-company" data-i18n={job.companyKey}></p>
+              </div>
+            </div>
+
+            <p class="wh-desc" data-i18n={job.descKey}></p>
+
+            <ul class="wh-bullets">
+              {job.bulletKeys.map((key) => (
+                <li class="wh-bullet-item">
+                  <span class="wh-bullet-dot" aria-hidden="true"></span>
+                  <span class="wh-bullet-text" data-i18n={key}></span>
+                </li>
+              ))}
+            </ul>
+
+            <p class="wh-tags mono" data-i18n={job.tagsKey}></p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .wh-section {
+    padding: 6rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .wh-timeline {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .wh-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .wh-line-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 1.75rem;
+    width: 20px;
+  }
+
+  .wh-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-border-hover);
+    border: 2px solid var(--color-border);
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .wh-dot-current {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  }
+
+  .wh-line {
+    width: 1px;
+    flex: 1;
+    background: var(--color-border);
+    min-height: 2rem;
+  }
+
+  .wh-item:last-child .wh-line {
+    display: none;
+  }
+
+  .wh-content {
+    flex: 1;
+    padding: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .wh-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .wh-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .wh-period,
+  .wh-type {
+    font-size: 0.7rem;
+    color: var(--color-muted);
+  }
+
+  .wh-sep {
+    font-size: 0.7rem;
+    color: var(--color-border-hover);
+  }
+
+  .wh-badge-current {
+    font-size: 0.65rem;
+    padding: 0.125rem 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--color-accent);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 999px;
+  }
+
+  .wh-job-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.125rem;
+  }
+
+  .wh-company {
+    font-size: 0.875rem;
+    color: var(--color-accent-hover);
+    font-weight: 500;
+  }
+
+  .wh-desc {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .wh-bullets {
+    list-style: none;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .wh-bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+  }
+
+  .wh-bullet-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .wh-bullet-text {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+
+  .wh-tags {
+    font-size: 0.7rem;
+    color: var(--color-muted);
+    padding-top: 0.875rem;
+    border-top: 1px solid var(--color-border);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    .wh-line-col {
+      display: none;
+    }
+
+    .wh-content {
+      margin-left: 0;
+    }
+  }
+</style>

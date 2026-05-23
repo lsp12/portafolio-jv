@@ -1,0 +1,177 @@
+---
+const areas = [
+  {
+    titleKey: "experience.area_automation",
+    descKey: "experience.area_automation_desc",
+    bulletKeys: [
+      "experience.area_automation_b1",
+      "experience.area_automation_b2",
+      "experience.area_automation_b3",
+      "experience.area_automation_b4",
+    ],
+    accentClass: "dot-blue",
+  },
+  {
+    titleKey: "experience.area_api",
+    descKey: "experience.area_api_desc",
+    bulletKeys: [
+      "experience.area_api_b1",
+      "experience.area_api_b2",
+      "experience.area_api_b3",
+      "experience.area_api_b4",
+    ],
+    accentClass: "dot-green",
+  },
+  {
+    titleKey: "experience.area_erp",
+    descKey: "experience.area_erp_desc",
+    bulletKeys: [
+      "experience.area_erp_b1",
+      "experience.area_erp_b2",
+      "experience.area_erp_b3",
+      "experience.area_erp_b4",
+    ],
+    accentClass: "dot-blue",
+  },
+  {
+    titleKey: "experience.area_hr",
+    descKey: "experience.area_hr_desc",
+    bulletKeys: [
+      "experience.area_hr_b1",
+      "experience.area_hr_b2",
+      "experience.area_hr_b3",
+      "experience.area_hr_b4",
+    ],
+    accentClass: "dot-green",
+  },
+];
+---
+
+<section id="experience" class="experience-section" aria-label="Technical experience">
+  <div class="section-container">
+    <p class="section-label" data-i18n="experience.section_label"></p>
+    <h2 class="section-title" data-i18n="experience.section_title"></h2>
+    <p class="experience-subtitle" data-i18n="experience.subtitle"></p>
+
+    <div class="experience-grid">
+      {areas.map((area, index) => (
+        <article class="card experience-card" id={`experience-card-${index}`}>
+          <div class="experience-card-inner">
+            <span class={`experience-dot ${area.accentClass}`} aria-hidden="true"></span>
+            <div class="experience-content">
+              <h3 class="experience-title" data-i18n={area.titleKey}></h3>
+              <p class="experience-desc" data-i18n={area.descKey}></p>
+              <ul class="experience-bullets">
+                {area.bulletKeys.map((bulletKey) => (
+                  <li class="experience-bullet-item">
+                    <span class={`bullet-dot ${area.accentClass}`} aria-hidden="true"></span>
+                    <span class="mono experience-bullet-text" data-i18n={bulletKey}></span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    padding: 6rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .experience-subtitle {
+    margin-top: 1rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  .experience-grid {
+    margin-top: 3rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .experience-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .experience-card {
+    padding: 1.75rem;
+  }
+
+  .experience-card-inner {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .experience-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .dot-blue {
+    background-color: var(--color-accent);
+  }
+
+  .dot-green {
+    background-color: var(--color-green);
+  }
+
+  .experience-content {
+    flex: 1;
+  }
+
+  .experience-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-desc {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .experience-bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .experience-bullet-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .bullet-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .experience-bullet-text {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+  }
+</style>

@@ -1,0 +1,95 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = "Jonathan Vera — Backend & Full Stack Developer",
+  description = "Backend and Full Stack Developer specializing in enterprise APIs, business process automation, ERP integrations, and data-driven internal systems.",
+  canonicalUrl = Astro.url.href,
+} = Astro.props;
+
+const siteUrl = "https://jonathanvera.dev";
+const ogImage = `${siteUrl}/og-image.png`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Jonathan Vera",
+  jobTitle: "Backend & Full Stack Developer",
+  description:
+    "Backend and Full Stack Developer specializing in enterprise APIs, business process automation and ERP integrations.",
+  url: siteUrl,
+  sameAs: [
+    "https://github.com/lsp12",
+    "https://linkedin.com/in/jonathanvera-developer-web",
+  ],
+  knowsAbout: [
+    "Node.js",
+    "Express",
+    "NestJS",
+    "REST API Development",
+    "GraphQL",
+    "TypeScript",
+    "PostgreSQL",
+    "SQL Server",
+    "MongoDB",
+    "Vue.js",
+    "React",
+    "Angular",
+    "Astro",
+    "Docker",
+    "Azure",
+    "Business Process Automation",
+    "ERP Integration",
+    "HR & Payroll Systems",
+    "Business Intelligence",
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Jonathan Vera" />
+    <meta
+      name="keywords"
+      content="backend developer, full stack developer, Node.js, REST API, enterprise software, process automation, PostgreSQL, SQL Server, Vue, React, Astro"
+    />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Jonathan Vera — Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0f" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

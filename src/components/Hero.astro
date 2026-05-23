@@ -1,0 +1,155 @@
+---
+---
+
+<section id="hero" class="hero-section subtle-grid" aria-label="Hero section">
+  <div class="hero-glow hero-glow-blue" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-green" aria-hidden="true"></div>
+
+  <div class="section-container hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        <span class="mono hero-badge-text" data-i18n="hero.available"></span>
+      </div>
+
+      <p class="mono hero-greeting" data-i18n="hero.greeting"></p>
+
+      <h1 class="hero-name gradient-text" data-i18n="hero.name"></h1>
+
+      <h2 class="hero-role" data-i18n="hero.role"></h2>
+
+      <p class="hero-description" data-i18n="hero.description"></p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary" id="hero-cta-projects" data-i18n="hero.cta_projects"></a>
+        <a href="#contact" class="btn-secondary" id="hero-cta-contact" data-i18n="hero.cta_contact"></a>
+      </div>
+
+      <div class="hero-stack">
+        {["Node.js", "Express", "PostgreSQL", "Vue.js", "React", "Docker"].map((tech) => (
+          <span class="mono hero-tech">{tech}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding-top: 64px;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-glow-blue {
+    width: 384px;
+    height: 384px;
+    background: rgba(59, 130, 246, 0.15);
+    top: 25%;
+    left: -128px;
+  }
+
+  .hero-glow-green {
+    width: 288px;
+    height: 288px;
+    background: rgba(16, 185, 129, 0.08);
+    bottom: 25%;
+    right: 0;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 1;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .hero-content {
+    max-width: 780px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-badge-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero-badge-text {
+    font-size: 0.75rem;
+    color: var(--color-green);
+  }
+
+  .hero-greeting {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-name {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-role {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+    color: var(--color-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+    color: var(--color-muted);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .hero-tech {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    opacity: 0.5;
+  }
+</style>
