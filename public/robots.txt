@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host
+Host: https://lsp12.github.io/portafolio-jv/
+
+# Sitemap
+Sitemap: https://lsp12.github.io/portafolio-jv/sitemap-index.xml
