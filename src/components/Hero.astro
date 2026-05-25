@@ -4,6 +4,36 @@
 <section id="hero" class="hero-section subtle-grid" aria-label="Hero section">
   <div class="hero-glow hero-glow-blue" aria-hidden="true"></div>
   <div class="hero-glow hero-glow-green" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-purple" aria-hidden="true"></div>
+
+  <div class="orbit-wrapper" aria-hidden="true">
+    <svg
+      class="orbit-ring"
+      width="340"
+      height="340"
+      viewBox="0 0 340 340"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="170"
+        cy="170"
+        r="160"
+        stroke="rgba(59,130,246,0.12)"
+        stroke-width="1"
+        stroke-dasharray="6 10"></circle>
+      <circle
+        cx="170"
+        cy="170"
+        r="120"
+        stroke="rgba(16,185,129,0.08)"
+        stroke-width="1"
+        stroke-dasharray="4 14"></circle>
+    </svg>
+    <div class="orbit-dot">
+      <span class="orbit-dot-inner"></span>
+    </div>
+  </div>
 
   <div class="section-container hero-container">
     <div class="hero-content">
@@ -21,14 +51,24 @@
       <p class="hero-description" data-i18n="hero.description"></p>
 
       <div class="hero-buttons">
-        <a href="#projects" class="btn-primary" id="hero-cta-projects" data-i18n="hero.cta_projects"></a>
-        <a href="#contact" class="btn-secondary" id="hero-cta-contact" data-i18n="hero.cta_contact"></a>
+        <a
+          href="#projects"
+          class="btn-primary"
+          id="hero-cta-projects"
+          data-i18n="hero.cta_projects"></a>
+        <a
+          href="#contact"
+          class="btn-secondary"
+          id="hero-cta-contact"
+          data-i18n="hero.cta_contact"></a>
       </div>
 
       <div class="hero-stack">
-        {["Node.js", "Express", "PostgreSQL", "Vue.js", "React", "Docker"].map((tech) => (
-          <span class="mono hero-tech">{tech}</span>
-        ))}
+        {
+          ["Node.js", "Express", "PostgreSQL", "Vue.js", "React", "Docker"].map(
+            (tech) => <span class="mono hero-tech">{tech}</span>,
+          )
+        }
       </div>
     </div>
   </div>
@@ -68,6 +108,54 @@
     right: 0;
   }
 
+  .hero-glow-purple {
+    width: 320px;
+    height: 320px;
+    background: rgba(139, 92, 246, 0.07);
+    top: 10%;
+    right: 15%;
+  }
+
+  .orbit-wrapper {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 340px;
+    height: 340px;
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .orbit-wrapper {
+      display: block;
+    }
+  }
+
+  .orbit-ring {
+    position: absolute;
+    inset: 0;
+    transform-origin: center center;
+  }
+
+  .orbit-dot {
+    position: absolute;
+    inset: 0;
+    transform-origin: center center;
+  }
+
+  .orbit-dot-inner {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 12px 4px rgba(59, 130, 246, 0.6);
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .hero-container {
     position: relative;
     z-index: 1;
@@ -96,8 +184,13 @@
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
   }
 
   .hero-badge-text {

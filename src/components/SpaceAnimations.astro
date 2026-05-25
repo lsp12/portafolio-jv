@@ -1,0 +1,184 @@
+---
+---
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ─── HERO entrance animation ────────────────────────────────────────────────
+  const heroTl = gsap.timeline({ delay: 0.3 });
+  heroTl
+    .from(".hero-badge", {
+      opacity: 0,
+      y: 24,
+      duration: 0.6,
+      ease: "power2.out",
+    })
+    .from(
+      ".hero-greeting",
+      { opacity: 0, y: 20, duration: 0.5, ease: "power2.out" },
+      "-=0.3",
+    )
+    .from(
+      ".hero-name",
+      { opacity: 0, y: 28, duration: 0.7, ease: "power2.out" },
+      "-=0.3",
+    )
+    .from(
+      ".hero-role",
+      { opacity: 0, y: 20, duration: 0.55, ease: "power2.out" },
+      "-=0.35",
+    )
+    .from(
+      ".hero-description",
+      { opacity: 0, y: 16, duration: 0.5, ease: "power2.out" },
+      "-=0.3",
+    )
+    .from(
+      ".hero-buttons > *",
+      { opacity: 0, y: 16, stagger: 0.12, duration: 0.45, ease: "power2.out" },
+      "-=0.25",
+    )
+    .from(
+      ".hero-tech",
+      { opacity: 0, x: -12, stagger: 0.07, duration: 0.4, ease: "power2.out" },
+      "-=0.2",
+    );
+
+  // ─── Generic scroll-reveal helper ───────────────────────────────────────────
+  function revealOnScroll(selector: string, vars: gsap.TweenVars = {}) {
+    gsap.utils.toArray<Element>(selector).forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 88%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        ease: "power2.out",
+        ...vars,
+      });
+    });
+  }
+
+  function revealStagger(
+    parentSelector: string,
+    childSelector: string,
+    staggerAmount = 0.1,
+  ) {
+    gsap.utils.toArray<Element>(parentSelector).forEach((parent) => {
+      const children = parent.querySelectorAll<Element>(childSelector);
+      gsap.from(children, {
+        scrollTrigger: {
+          trigger: parent,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 32,
+        stagger: staggerAmount,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    });
+  }
+
+  // ─── Section labels and titles ───────────────────────────────────────────────
+  revealOnScroll(".section-label", { y: 16, duration: 0.5 });
+  revealOnScroll(".section-title", { y: 24, duration: 0.65, delay: 0.08 });
+
+  // ─── About section ───────────────────────────────────────────────────────────
+  revealOnScroll(".about-p", { y: 20, stagger: 0.1, duration: 0.55 });
+  revealStagger(".about-stats", ".stat-card, .focus-card", 0.1);
+
+  // ─── Work history timeline ────────────────────────────────────────────────────
+  gsap.utils.toArray<Element>(".wh-item").forEach((item, i) => {
+    gsap.from(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top 87%",
+        toggleActions: "play none none none",
+      },
+      opacity: 0,
+      x: -40,
+      duration: 0.75,
+      delay: i * 0.05,
+      ease: "power2.out",
+    });
+  });
+
+  // ─── Skills grid ─────────────────────────────────────────────────────────────
+  revealStagger(".skills-grid", ".skill-card", 0.08);
+
+  // ─── Experience cards ─────────────────────────────────────────────────────────
+  revealStagger(".experience-grid", ".experience-card", 0.1);
+
+  // ─── Project cards ────────────────────────────────────────────────────────────
+  revealStagger(".projects-grid", ".project-card", 0.12);
+
+  // ─── Education cards ──────────────────────────────────────────────────────────
+  revealStagger(".edu-grid", ".edu-card", 0.12);
+
+  // ─── Contact links ────────────────────────────────────────────────────────────
+  revealOnScroll(".contact-desc", { duration: 0.55 });
+  revealStagger(".contact-links", ".contact-link-card", 0.1);
+
+  // ─── Nebula glow parallax on hero ────────────────────────────────────────────
+  gsap.to(".hero-glow-blue", {
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 1.5,
+    },
+    y: -120,
+    x: 40,
+    scale: 1.3,
+    ease: "none",
+  });
+  gsap.to(".hero-glow-green", {
+    scrollTrigger: {
+      trigger: "#hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2,
+    },
+    y: -80,
+    x: -30,
+    scale: 1.2,
+    ease: "none",
+  });
+
+  // ─── Floating orbit ring ──────────────────────────────────────────────────────
+  gsap.to(".orbit-ring", {
+    rotate: 360,
+    duration: 40,
+    repeat: -1,
+    ease: "none",
+    transformOrigin: "center center",
+  });
+  gsap.to(".orbit-dot", {
+    rotate: -360,
+    duration: 40,
+    repeat: -1,
+    ease: "none",
+    transformOrigin: "80px 80px",
+  });
+
+  // ─── Footer ──────────────────────────────────────────────────────────────────
+  gsap.from("footer", {
+    scrollTrigger: {
+      trigger: "footer",
+      start: "top 95%",
+      toggleActions: "play none none none",
+    },
+    opacity: 0,
+    y: 20,
+    duration: 0.6,
+    ease: "power2.out",
+  });
+</script>

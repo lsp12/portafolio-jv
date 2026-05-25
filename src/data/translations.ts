@@ -9,7 +9,7 @@ export const translations = {
       experience: "Experience",
       projects: "Projects",
       contact: "Contact",
-      hire: "Hire me",
+      hire: "Contact me",
     },
     hero: {
       greeting: "Hi, I'm",
@@ -51,22 +51,26 @@ export const translations = {
       area_automation: "Business Process Automation",
       area_automation_desc:
         "Designed and implemented automated pipelines that replaced manual workflows, significantly reducing processing time and human error across payroll and HR operations.",
-      area_automation_b1: "Payroll calculation engines with complex labor law logic",
+      area_automation_b1:
+        "Payroll calculation engines with complex labor law logic",
       area_automation_b2: "Scheduled batch jobs for mass data processing",
-      area_automation_b3: "Excel report generation via ExcelJS with conditional formatting",
+      area_automation_b3:
+        "Excel report generation via ExcelJS with conditional formatting",
       area_automation_b4: "Automated email dispatch with PDF attachments",
       area_api: "Enterprise API Development",
       area_api_desc:
         "Built and maintained production REST APIs consumed by internal systems, mobile clients and third-party integrations.",
       area_api_b1: "JWT authentication and role-based access control",
-      area_api_b2: "Structured middleware pipelines (validation, logging, error handling)",
+      area_api_b2:
+        "Structured middleware pipelines (validation, logging, error handling)",
       area_api_b3: "Database abstraction layers and query optimization",
       area_api_b4: "Swagger/OpenAPI auto-generated documentation",
       area_erp: "ERP & Accounting Integrations",
       area_erp_desc:
         "Developed integrations between internal systems and external platforms such as SAP and accounting software, ensuring data consistency and traceability.",
       area_erp_b1: "SAP API Cloud connector for payroll synchronization",
-      area_erp_b2: "Accounting journal automation (income, deductions, employer contributions)",
+      area_erp_b2:
+        "Accounting journal automation (income, deductions, employer contributions)",
       area_erp_b3: "Data reconciliation and mismatch detection pipelines",
       area_erp_b4: "Audit-ready reporting with structured logs",
       area_hr: "HR & Payroll Systems",
@@ -91,7 +95,8 @@ export const translations = {
       project_1_h1: "JWT authentication with refresh tokens",
       project_1_h2: "Role-based access control",
       project_1_h3: "Auto-generated Swagger docs",
-      project_1_h4: "Layered architecture (routes → controllers → services → repositories)",
+      project_1_h4:
+        "Layered architecture (routes → controllers → services → repositories)",
       project_2_title: "Business Intelligence Dashboard",
       project_2_desc:
         "Interactive dashboard for enterprise KPI tracking with real-time charts, advanced filters, Excel export and key business indicators.",
@@ -140,20 +145,28 @@ export const translations = {
       job1_type: "Remote",
       job1_desc:
         "Enterprise HR, payroll, and operational cost platform serving multiple companies. Architected integrations with SAP, Dynamics 365, GeoVictoria, and ZKTeco BioTime.",
-      job1_h1: "Reduced integration development time by 80% with a configurable integration module",
-      job1_h2: "Improved MongoDB query performance, cutting database latency by 70%",
-      job1_h3: "Built multi-user mobile platform integrated with payroll and HR systems",
-      job1_h4: "Designed advanced data structures for dynamic data management and scalability",
-      job1_tags: "Node.js · Vue 3 · TypeScript · MongoDB · Firebase · Quasar · GraphQL · Azure",
+      job1_h1:
+        "Reduced integration development time by 80% with a configurable integration module",
+      job1_h2:
+        "Improved MongoDB query performance, cutting database latency by 70%",
+      job1_h3:
+        "Built multi-user mobile platform integrated with payroll and HR systems",
+      job1_h4:
+        "Designed advanced data structures for dynamic data management and scalability",
+      job1_tags:
+        "Node.js · Vue 3 · TypeScript · MongoDB · Firebase · Quasar · GraphQL · Azure",
       job2_title: "Software Engineer",
       job2_company: "Sumifru S.A",
       job2_period: "Jan 2022 — Aug 2022",
       job2_type: "Remote",
       job2_desc:
         "Internal systems for operational analytics and productivity optimization across large-scale agricultural operations.",
-      job2_h1: "Built analytics platform that reduced operational losses by 50%",
-      job2_h2: "Developed high-performance data entry system, improving processing speed by 80%",
-      job2_h3: "Implemented inventory management for warehouse and daily tool tracking",
+      job2_h1:
+        "Built analytics platform that reduced operational losses by 50%",
+      job2_h2:
+        "Developed high-performance data entry system, improving processing speed by 80%",
+      job2_h3:
+        "Implemented inventory management for warehouse and daily tool tracking",
       job2_h4: "Created collaborative platforms for management communication",
       job2_tags: "React · NestJS · TypeScript · SQL Server · TypeORM · Redux",
       job3_title: "Independent Software Consultant",
@@ -166,7 +179,8 @@ export const translations = {
       job3_h2: "Tourism logistics and online reservation platforms",
       job3_h3: "Veterinary medical record management systems",
       job3_h4: "Online payment integrations with Stripe and PayPal",
-      job3_tags: "React · Node.js · TypeScript · MongoDB · MariaDB · PHP · Stripe",
+      job3_tags:
+        "React · Node.js · TypeScript · MongoDB · MariaDB · PHP · Stripe",
     },
     education: {
       section_label: "Education",
@@ -200,7 +214,7 @@ export const translations = {
       experience: "Experiencia",
       projects: "Proyectos",
       contact: "Contacto",
-      hire: "Contrátame",
+      hire: "Contáctame",
     },
     hero: {
       greeting: "Hola, soy",
@@ -242,22 +256,28 @@ export const translations = {
       area_automation: "Automatización de Procesos Empresariales",
       area_automation_desc:
         "Diseñé e implementé pipelines automatizados que reemplazaron flujos manuales, reduciendo significativamente el tiempo de procesamiento y el error humano en operaciones de nómina y RRHH.",
-      area_automation_b1: "Motores de cálculo de nómina con lógica laboral compleja",
-      area_automation_b2: "Trabajos batch programados para procesamiento masivo de datos",
-      area_automation_b3: "Generación de reportes Excel con ExcelJS y formato condicional",
+      area_automation_b1:
+        "Motores de cálculo de nómina con lógica laboral compleja",
+      area_automation_b2:
+        "Trabajos batch programados para procesamiento masivo de datos",
+      area_automation_b3:
+        "Generación de reportes Excel con ExcelJS y formato condicional",
       area_automation_b4: "Despacho automático de correos con adjuntos PDF",
       area_api: "Desarrollo de APIs Empresariales",
       area_api_desc:
         "Construí y mantuve APIs REST de producción consumidas por sistemas internos, clientes móviles e integraciones de terceros.",
       area_api_b1: "Autenticación JWT y control de acceso basado en roles",
-      area_api_b2: "Pipelines de middleware estructurados (validación, logging, manejo de errores)",
-      area_api_b3: "Capas de abstracción de base de datos y optimización de consultas",
+      area_api_b2:
+        "Pipelines de middleware estructurados (validación, logging, manejo de errores)",
+      area_api_b3:
+        "Capas de abstracción de base de datos y optimización de consultas",
       area_api_b4: "Documentación auto-generada Swagger/OpenAPI",
       area_erp: "Integraciones ERP & Contables",
       area_erp_desc:
         "Desarrollé integraciones entre sistemas internos y plataformas externas como SAP y software contable, garantizando consistencia y trazabilidad de datos.",
       area_erp_b1: "Conector SAP API Cloud para sincronización de nómina",
-      area_erp_b2: "Automatización de asientos contables (ingresos, deducciones, aportes patronales)",
+      area_erp_b2:
+        "Automatización de asientos contables (ingresos, deducciones, aportes patronales)",
       area_erp_b3: "Pipelines de reconciliación y detección de inconsistencias",
       area_erp_b4: "Reportes listos para auditoría con logs estructurados",
       area_hr: "Sistemas de RRHH & Nómina",
@@ -282,14 +302,16 @@ export const translations = {
       project_1_h1: "Autenticación JWT con refresh tokens",
       project_1_h2: "Control de acceso basado en roles",
       project_1_h3: "Docs Swagger auto-generados",
-      project_1_h4: "Arquitectura en capas (rutas → controladores → servicios → repositorios)",
+      project_1_h4:
+        "Arquitectura en capas (rutas → controladores → servicios → repositorios)",
       project_2_title: "Dashboard de Inteligencia de Negocio",
       project_2_desc:
         "Dashboard interactivo para seguimiento de KPIs empresariales con gráficos en tiempo real, filtros avanzados, exportación Excel e indicadores clave.",
       project_2_h1: "Gráficos KPI en tiempo real y análisis de tendencias",
       project_2_h2: "Motor de filtrado multi-criterio",
       project_2_h3: "Exportación de reportes Excel con un clic",
-      project_2_h4: "Layout responsivo optimizado para grandes volúmenes de datos",
+      project_2_h4:
+        "Layout responsivo optimizado para grandes volúmenes de datos",
       project_3_title: "Herramienta de Automatización Excel → API",
       project_3_desc:
         "Herramienta de automatización empresarial que procesa archivos Excel, valida datos estructurados y genera reportes formateados vía API REST.",
@@ -331,21 +353,30 @@ export const translations = {
       job1_type: "Remoto",
       job1_desc:
         "Plataforma empresarial de RRHH, nómina y costos operativos para múltiples empresas. Arquitecté integraciones con SAP, Dynamics 365, GeoVictoria y ZKTeco BioTime.",
-      job1_h1: "Reduje el tiempo de desarrollo de integraciones en un 80% con un módulo configurable",
-      job1_h2: "Mejoré el rendimiento de consultas MongoDB, reduciendo la latencia en un 70%",
-      job1_h3: "Construí plataforma móvil multi-usuario integrada con sistemas de nómina y RRHH",
-      job1_h4: "Diseñé estructuras de datos avanzadas para gestión dinámica y escalabilidad",
-      job1_tags: "Node.js · Vue 3 · TypeScript · MongoDB · Firebase · Quasar · GraphQL · Azure",
+      job1_h1:
+        "Reduje el tiempo de desarrollo de integraciones en un 80% con un módulo configurable",
+      job1_h2:
+        "Mejoré el rendimiento de consultas MongoDB, reduciendo la latencia en un 70%",
+      job1_h3:
+        "Construí plataforma móvil multi-usuario integrada con sistemas de nómina y RRHH",
+      job1_h4:
+        "Diseñé estructuras de datos avanzadas para gestión dinámica y escalabilidad",
+      job1_tags:
+        "Node.js · Vue 3 · TypeScript · MongoDB · Firebase · Quasar · GraphQL · Azure",
       job2_title: "Ingeniero de Software",
       job2_company: "Sumifru S.A",
       job2_period: "Ene 2022 — Ago 2022",
       job2_type: "Remoto",
       job2_desc:
         "Sistemas internos de analítica operativa y optimización de productividad para operaciones agrícolas a gran escala.",
-      job2_h1: "Construí plataforma analítica que redujo pérdidas operativas en un 50%",
-      job2_h2: "Desarrollé sistema de ingreso de datos de alto rendimiento, mejorando la velocidad en un 80%",
-      job2_h3: "Implementé gestión de inventario para almacenes y seguimiento de herramientas",
-      job2_h4: "Creé plataformas colaborativas internas para comunicación gerencial",
+      job2_h1:
+        "Construí plataforma analítica que redujo pérdidas operativas en un 50%",
+      job2_h2:
+        "Desarrollé sistema de ingreso de datos de alto rendimiento, mejorando la velocidad en un 80%",
+      job2_h3:
+        "Implementé gestión de inventario para almacenes y seguimiento de herramientas",
+      job2_h4:
+        "Creé plataformas colaborativas internas para comunicación gerencial",
       job2_tags: "React · NestJS · TypeScript · SQL Server · TypeORM · Redux",
       job3_title: "Consultor de Software Independiente",
       job3_company: "Freelance",
@@ -357,7 +388,8 @@ export const translations = {
       job3_h2: "Plataformas de logística turística y reservas en línea",
       job3_h3: "Sistemas de gestión de historiales médicos veterinarios",
       job3_h4: "Integraciones de pago con Stripe y PayPal",
-      job3_tags: "React · Node.js · TypeScript · MongoDB · MariaDB · PHP · Stripe",
+      job3_tags:
+        "React · Node.js · TypeScript · MongoDB · MariaDB · PHP · Stripe",
     },
     education: {
       section_label: "Educación",
